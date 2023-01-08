@@ -13,6 +13,11 @@ def start_command(update, context):
         1. Type /medicine to get medical assistance 
         2. Type /grocery to order Groceries 
         3. Type /game to play games 
+        4. Click /song to play songs or watch movies
+        5. Click /news to listen to news 
+        6. Click /shop to do shopping 
+        You make also use words like bore or entertain or entertainment to get suggestions from the bot
+        Please write '/' in the chat to check out all the available commands
     ''')
 
 
@@ -47,21 +52,26 @@ def shopping_command(update, context):
 def handle_response(text: str) -> str:
   if 'help' in text:
     return '''What do you want? You can do the following with me: 
-        1. Type /medicine to get medical assistance 
-        2. Type /grocery to order Groceries 
-        3. Type /game to play games '''
+        1. Click /medicine to get medical assistance 
+        2. Click /grocery to order groceries 
+        3. Click /game to play games 
+        4. Click /song to play songs or watch movies
+        5. Click /news to listen to news 
+        6. Click /shop to do shopping 
+        You make also use words like bore or entertain or entertainment to get suggestions from the bot
+        '''
 
   if 'how are you' in text:
     return 'I am fine'
 
-  if 'bored' or 'bore' in text:
+  if 'bored' or 'bore' or 'entertain' or 'entertainment' in text:
     return ''' What can I do for you? 
       1. Open game /game
-      2. Play songs 
-      3. Send news '''
+      2. Play songs /song
+      3. Watch movies /song'''
 
   #if none of the above if statements work return idk
-  return 'idk'
+  return "Please write '/' in the chat to check out all the available commands"
 
 
 def handle_message(update, context):
