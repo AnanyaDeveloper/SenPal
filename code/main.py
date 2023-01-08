@@ -1,8 +1,12 @@
 import os
+from dotenv import load_dotenv
 from telegram import Update #upm package(python-telegram-bot)
 from telegram.ext import *
 import keys
 import webbrowser
+load_dotenv()
+
+Token = os.environ.get('token')
 
 print('Starting up bot.........')
 
@@ -61,17 +65,18 @@ def handle_response(text: str) -> str:
         You make also use words like bore or entertain or entertainment to get suggestions from the bot
         '''
 
-  if 'how are you' in text:
+  elif 'how are you' in text:
     return 'I am fine'
 
-  if 'bored' or 'bore' or 'entertain' or 'entertainment' in text:
+  elif ('bored' or 'bore' or 'entertain' or 'entertainment') in text:
     return ''' What can I do for you? 
       1. Open game /game
       2. Play songs /song
       3. Watch movies /song'''
-
-  #if none of the above if statements work return idk
-  return "Please write '/' in the chat to check out all the available commands"
+  
+  else:
+    return "'Please write '/' in the chat to check out all the available commands'"
+  #if none of the above if statements work return this
 
 
 def handle_message(update, context):
@@ -84,7 +89,7 @@ def handle_message(update, context):
 
 
 if __name__ == '__main__':
-  updater = Updater(keys.token, use_context=True)
+  updater = Updater(Token, use_context=True)
   dp = updater.dispatcher
 
   dp.add_handler(CommandHandler('start', start_command))
