@@ -31,6 +31,17 @@ def game_command(update, context):
 def grocery_command(update, context):
   webbrowser.open('https://telegram.me/grocerylistbot')
 
+def songmov_command(update, context):
+  webbrowser.open('https://t.me/youtube')
+
+
+def news_command(update, context):
+  webbrowser.open('https://t.me/youtube')
+
+
+def shopping_command(update, context):
+  webbrowser.open('https://t.me/shopbot')
+
 
 #takes a string and ->returns a string
 def handle_response(text: str) -> str:
@@ -71,6 +82,10 @@ if __name__ == '__main__':
   dp.add_handler(CommandHandler('medicine', medicine_command))
   dp.add_handler(CommandHandler('game', game_command))
   dp.add_handler(CommandHandler('grocery', grocery_command))
+  dp.add_handler(CommandHandler('song', songmov_command))
+  dp.add_handler(CommandHandler('news', news_command))
+  dp.add_handler(CommandHandler('shop', shopping_command))
+
 
   dp.add_handler(MessageHandler(Filters.text, handle_message))
 
