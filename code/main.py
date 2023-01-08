@@ -2,7 +2,6 @@ import os
 from dotenv import load_dotenv
 from telegram import Update #upm package(python-telegram-bot)
 from telegram.ext import *
-import keys
 import webbrowser
 load_dotenv()
 
@@ -62,7 +61,8 @@ def handle_response(text: str) -> str:
         4. Click /song to play songs or watch movies
         5. Click /news to listen to news 
         6. Click /shop to do shopping 
-        You make also use words like bore or entertain or entertainment to get suggestions from the bot
+        You make use of phrases like "Feeling bored" or "Entertain me" or entertainment to get suggestions from the bot
+        Please write '/' in the chat to check out all the available commands
         '''
 
   elif 'how are you' in text:
