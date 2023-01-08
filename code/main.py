@@ -14,7 +14,7 @@ def start_command(update, context):
   update.message.reply_text('''Hello there! I am there for your assistance!
     What do you want? You can do the following with me: 
         1. Click /medicine to get medical assistance 
-        2. Click /grocery to order Groceries 
+        2. Click /grocery to order groceries 
         3. Click /game to play games 
         4. Click /song to play songs or watch movies
         5. Click /news to listen to news 
